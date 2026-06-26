@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:radial-gradient(rgb(179, 215, 241),rgb(181, 163, 241));
+    height: 100%;
+}
+
+/**************************************************************
+ESTILOS PARA EL HEADER 
+*************************************************************/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(116, 96, 165);
+    font-size: 100px;
+    height: 70px;
+    
+}
+.menu_header{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-size: 55px;
+    font-family:cooper;
+}
+
+header .menu-container {
+    display: flex;
+text-align: left;
+justify-content: center;
+
+}
+header .buho{
+    height: 70px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+    margin-top: 0px;
+}
+header img{
+    margin-top: -5px;
+    max-height: 100px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+
+
+
+header div{
+    padding-left:5%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25%;
+    width: 10%;
+    height: 100px;
+    text-align: center;
+    z-index: 9999; 
+}
+
+
+
+/**********************************************
+ESTILOS PARA EL SECTION
+***********************************************/
+
+section{
+    height: 300px;
+    width: 100%;
+}
+section h1{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+}
+
+section p{
+    font-size: 20px;
+    text-align: justify ;
+}
+
+/**********************************************
+ESTILOS PARA EL FOOTER
+***********************************************/
+footer{
+    font-size: 30px;
+    font-family: cooper;
+    background-color: rgb(87, 87, 153);
+    height: 60px;
+    width: 100%;
+    margin-top: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/**********************************************
+ESTILOS PARA EL DIV Y LAS LISTAS
+***********************************************/
+
+
+div a{
+    color:white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    height: 200px;
+}
+div a:hover{
+    background-color: rgb(143, 152, 245);
+    border-radius:25px;
+}
+
+header li{
+    list-style: none;
+    
+}
+header li ul{
+    display: none;
+    border-radius: 25px;
+}
+header li:hover ul{
+    display:block;
+    background-color:rgb(98, 174, 255);
+}
+header ul li{
+
+text-align: center;
+}
+.imgm{
+    border-radius: 0;
+    height: 50px;
+    background-color:  rgb(116, 96, 165);
+
+}
+
+
+/*************************************************
+ESTILOS PARA EL SECTION Y EL ASIDE
+*************************************************/
+section{
+    height: 100px;
+    width: 100%;
+    display: flex;  
+    justify-content: center;
+    }
+
+    
+    section div{height: 50px;
+    margin-top: 20px;
+}
+    
+    section li{
+        text-align: center;
+        padding: 3.05%;
+        font-size: 15px;
+        background-color: rgb(87, 102, 153);
+    }
+
+
+/*************************************************************
+ESTILOS PARA EL IFRAME
+*************************************************************/
+    section div iframe{
+        height: 528.5px;
+        width:60%;
+        }
+    section div a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        width: 100%;
+        height: 900px;
+        padding: 75px 30px;
+        background-color: white;
+        border-radius: 5px;
+    
+        
+    }
+    .container .title-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        font-size: 25px;
+        margin-top: -90px;
+        text-align: center;
+        background:linear-gradient(rgb(182, 136, 232),rgb(233, 173, 234));
+        border-radius: 25px;
+    }
+    
+    .container form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px 12px 0;
+    
+    }
+    
+    form .form-group{
+        margin-bottom: 10px;
+        width: calc(100%/2 - 20px);  
+    }
+    .container form .form-group {
+        margin-bottom: 40px; /* Aumenta el espaciado entre los inputs */
+    }
+
+    
+    form span{
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    form .span-class{
+        border-radius: 3px;
+        text-align: center;
+        color:rgb(122, 0, 228);
+
+    }
+    
+    .form-group input{
+        height: 40px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        border-bottom-width: 2px;
+        transition: all 0.3 ease;
+    }
+    
+    
+    .form-group input:focus,
+    .form-group input:valid{
+        border-color: rgb(207, 166, 243); 
+    }
+    
+    form .button{
+        width: 100%;
+        height: 40px;
+        margin: 40px 0;
+    }
+    form .button input{
+        width: 100%;
+        height: 100%;
+        outline: none;
+        cursor: pointer;
+        background: linear-gradient(rgb(143, 152, 245),rgb(217, 113, 238));
+        color:white;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        border-radius: 25px;
+    }
+    
+    form .button input:hover{
+        background: linear-gradient(rgb(138, 33, 250),rgb(242, 113, 245));
+    }
+    
+
+    /*******************************************
+ESTILOS PARA EL MENSAJE
+*******************************************/
+
+.container-class{
+    background:linear-gradient(rgb(182, 136, 232),rgb(233, 173, 234));
+}
+
+.titulo-class{
+    color: rgb(109, 56, 243);
+    font-size: 50px;
+}
+
+.icono-class{
+    background: rgb(161, 77, 235);
+}
+
+
+/*********************************************
+ESTILOS PARA SELECT
+*********************************************/
+.form-select{
+    margin-top: 50px;
+    display: flex;
+    width: 100;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+
+}
+
+.span-club{
+    margin-left: 30px;
+    color:rgb(122, 0, 228);
+}
+.span-carrera{
+    margin-left: 60px;
+    color:rgb(122, 0, 228);
+}
+
+.custom-select-clubes {
+
+    width: 350px ;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color:rgba(231, 176, 255, 0.856);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-select-clubes:focus {
+    border-color:rgba(231, 176, 255, 0.856);
+    box-shadow: 0 0 100px rgb(197, 82, 255);
+}
+
+.custom-select-carreras {
+    margin-right:30px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #83bfff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-select-carreras:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 100px rgb(0, 51, 255);
+}

@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto de los elementos */
+}
+
+body {
+    background: radial-gradient(rgb(179, 215, 241), rgb(181, 163, 241));
+    height: 100%;
+}
+
+/**************************************************************
+ESTILOS PARA EL HEADER 
+*************************************************************/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(116, 96, 165);
+    font-size: 100px;
+    height: 70px;
+}
+
+.menu_header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    font-family: cooper;
+}
+
+header .buho {
+    height: 70px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+
+header .menu-container {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+}
+
+header .buho {
+    height: 70px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+header img {
+    max-height: 100px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+
+header div{
+    padding-left:5%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25%;
+    width: 10%;
+    height: 100px;
+    text-align: center;
+    z-index: 9999; 
+    margin-right: 38px;
+}
+.imgm {
+    border-radius: 0;
+    height: 50px;
+    background-color: transparent;
+    margin-top: -5px;
+}
+
+/**********************************************
+ESTILOS PARA EL SECTION
+***********************************************/
+
+section h1 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+}
+
+/**********************************************
+ESTILOS PARA EL FOOTER
+***********************************************/
+footer {
+    font-size: 30px;
+    font-family: cooper;
+    background-color: rgb(87, 87, 153);
+    height: 60px;
+    width: 100%;
+    margin-top: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/**********************************************
+ESTILOS PARA EL DIV Y LAS LISTAS
+***********************************************/
+
+ul .Link-carreras a {
+    font-size: 20px;
+}
+
+ul .Link-carreras a p {
+    background-color: transparent;
+}
+
+div a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    height: 200px;
+}
+
+div a:hover {
+    background-color: rgb(143, 152, 245);
+    border-radius: 25px;
+}
+
+header li {
+    list-style: none;
+}
+
+header li ul {
+    display: none;
+    border-radius: 25px;
+}
+
+header li:hover ul {
+    display: block;
+    background-color: rgb(98, 174, 255);
+}
+
+header ul li {
+    text-align: center;
+}
+
+/*************************************************
+ESTILOS PARA EL SECTION Y EL ASIDE
+*************************************************/
+aside h3 {
+    text-align: center;
+    background-color: rgb(148, 48, 230); /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: -10px;
+}
+section .Texto-carreras {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section {
+    height: 50px;
+    width: 100%;
+}
+
+section aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    height: 800px;
+    width: 30%;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    float: left;
+    margin-top: 20px;
+    background: linear-gradient(rgba(182, 136, 232, 0.885), rgb(233, 173, 234));
+}
+
+
+.texto-deporte{
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+aside a {
+    font-size: 27px;
+    color: rgb(70, 0, 92);
+    text-align: center;
+    display: block;
+    margin: 10px 0; /* Añade espacio vertical entre los enlaces */
+}
+
+aside a:hover {
+    color: rgb(167, 66, 170);
+}
+
+section div {
+    height: 50px;
+    margin-top: 20px;
+}
+
+section p {
+    margin-right: 10px;
+    border-radius: 5px;
+    
+}
+
+section li {
+    padding: 3.05%;
+    font-size: 15px;
+    height: 25px;
+}
+
+.Link-carreras {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los enlaces de carreras */
+}
+
+.Link-carreras li {
+    list-style-type: disc;
+    margin-left: 20px; /* Ajusta el margen según lo necesites */
+    padding-left: 0px; /* Ajusta el relleno según lo necesites */
+    text-align: left; /* Alinea los elementos de la lista a la izquierda */
+    margin: 10px 0; /* Añade espacio vertical entre los elementos de la lista */
+}
+
+.clubes {
+    font-size: 25px;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(108, 35, 255);
+    text-align: center; 
+    margin: 10px 0; 
+}
+
+.clubes:hover {
+    background-color: rgb(197, 89, 255);
+    color:rgb(29, 14, 241) ;
+    font-size: 25px;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*************************************************************
+ESTILOS PARA EL IFRAME
+*************************************************************/
+section div iframe {
+    margin-top: 75px;
+    height: 528.5px;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section div a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegúrate de que no haya puntos fuera del aside */
+section ul {
+    list-style: none;
+    padding-left: 0;
+}

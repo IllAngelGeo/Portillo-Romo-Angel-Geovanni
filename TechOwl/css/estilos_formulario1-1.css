@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:radial-gradient(rgb(179, 215, 241),rgb(181, 163, 241));
+    height: 100%;
+}
+
+/**************************************************************
+ESTILOS PARA EL HEADER 
+************************************************************/
+header{
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;     
+    background-color: rgb(116, 96, 165);
+    font-size: 100px;
+    height: 70px;
+}
+
+.header-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_header{
+    font-size: 55px;
+    font-family: cooper;
+    margin-left: 10px; 
+}
+
+header .buho{
+    height: 70px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+
+header img{
+    max-height: 70px;
+    background-color: rgb(143, 152, 245);
+    border-radius: 100px;
+}
+
+/**********************************************
+ESTILOS PARA EL SECTION
+***********************************************/
+section{
+    height: 500px;
+    width: 100%;
+}
+section h1{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+section p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+/**********************************************
+ESTILOS PARA EL DIV Y LAS LISTAS
+***********************************************/
+header div a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    height: 200px;
+}
+header div a:hover{
+    background-color: #2fada1;
+    border-radius: 25px;
+}
+
+header li{
+    list-style: none;
+}
+li ul{
+    display: none;
+    border-radius: 25px;
+}
+li:hover ul{
+    display: block;
+    background-color: aqua;
+}
+ul li{
+    text-align: center;
+}
+
+.imgm{
+    background-color: none;
+    border-radius: 0;
+    height: 60px;
+    background-color: #68d6d0;
+}
+
+/**********************************************
+Estilos para el formulario 
+**********************************************/
+form{
+    background: #fff;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    margin-top: 60px;
+    padding: 9% 40px;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    margin-bottom: 0;
+}
+
+.h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .title{
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient(rgb(182, 136, 232), rgb(233, 173, 234));
+    border-radius: 25px;
+}
+
+form h2{
+    border-radius: 10px;
+    margin-top: -70px;
+    margin-bottom: 50px;
+}
+
+form label:hover{
+    background-color: #a0ffff;
+}
+
+form .button input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(rgb(143, 152, 245), rgb(217, 113, 238));
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    margin-top: 40px;
+}
+
+form .button input:hover{
+    background: linear-gradient(rgb(138, 33, 250), rgb(242, 113, 245));
+}
+
+.divform{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+form span{
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-group input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+}
+
+.form-group input:focus,
+.form-group input:valid{
+    border-color: rgb(207, 166, 243);
+}
+
+.errorDatos{
+    color: #eb2179;
+    background-color: #f5d8f6;
+    padding: 2px;
+    border: 1px solid #ff9999;
+    border-radius: 5px;
+}
+
+.imgError{
+    height: 15px;
+    margin-right: 10px;
+    background: transparent;
+}
