@@ -10,3 +10,5 @@ Resultado: Se realizo una comandera en donde los meseros pueden realizar ordenes
 
 Proyecto: SCE
 Problemática: Falta de control dentro de una institucion o sistema obsoleto en donde no es capaz de soportar la escalabilidad.
+Solución: Creación de un sistema web de control escolar escalable y seguro para almacenar datos de la institución escolar.
+Resultado: Se realizo un sistema de control escolar siguiendo estandares de seguridad y con la capacidad de almacenar datos escolares a gran escala.
