@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpeedOrder.View.V_Ajustes"
+             xmlns:local="clr-namespace:SpeedOrder.ViewModel"
+             x:DataType="local:LoginViewModel"
+             Style="{DynamicResource PageTheme}">
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnThemeToggle"
+                 x:Name="Tema"
+                 Order="Primary"
+                 Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <Frame BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" WidthRequest="50" Margin="0" Padding="0">
+                <Image Source="user" />
+            </Frame>
+            <Label Text="" x:Name="TxtNombre" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,3,0,0" Style="{DynamicResource LabelTheme}" />
+
+            <Frame BackgroundColor="Transparent" Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" WidthRequest="50" Margin="0" Padding="0">
+                <Image Source="Email"  />
+            </Frame>
+            <Label Text="Correo Electronico" IsEnabled="False" Grid.Row="3" Grid.Column="1" FontAttributes="Bold" Grid.ColumnSpan="4" Style="{DynamicResource LabelTheme}"  />
+            <Label Text="{Binding Correo}" x:Name="Correo" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Style="{DynamicResource LabelTheme}" />
+
+            <Frame BackgroundColor="Transparent" Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" WidthRequest="50" Margin="0" Padding="0">
+                <Image Source="Platillos"  />
+            </Frame>
+            <Button Text="Editar Platillos" Style="{DynamicResource LabelTheme}" BackgroundColor="Transparent" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="10" Margin="0" Padding="0"/>
+        </Grid>
+        <Button Text="Editar Cuenta" x:Name="TxtEdit" CornerRadius="10" BackgroundColor="#5F1890" TextColor="White" Margin="20,10,20,10" Clicked="TxtEdit_Clicked"/>
+        <Button Text="Eliminar Cuenta" x:Name="TxtDelete" CornerRadius="10" BackgroundColor="Red" TextColor="White" Margin="20,10,20,10" Clicked="TxtDelete_Clicked" />
+    </StackLayout>
+</ContentPage>
