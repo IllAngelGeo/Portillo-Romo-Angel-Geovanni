@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SistemaCE</title>
+
+    <link href="~/css/output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+
+    <div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40" onclick="toggleSidebar()"></div>
+
+    <div id="sidebar"
+         class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50
+            transform -translate-x-full transition-transform duration-300">
+
+        <div class="p-4 border-b font-bold text-lg">
+            Menú
+        </div>
+
+        <div class="p-4 space-y-2">
+
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("docente"))
+                {
+ 
+                    <a asp-controller="CalificacionesAlumnos" asp-action="Index"
+                       class="block p-2 hover:bg-gray-100">
+                        Asignar calificaciones
+                    </a>
+                    <a asp-controller="Asistencia" asp-action="Index"
+                       class="block p-2 hover:bg-gray-100">
+                        Listas de asistencia
+                    </a>
+
+                }
+                else if (User.IsInRole("estudiante"))
+                {
+                    <div>Historia Academica
+                        <a href="/CalificacionesAlumnos/EvaluacionesActuales" class="block p-2 hover:bg-gray-100">Evaluaciones Actuales</a>
+                    <a href="/CalificacionesAlumnos/HistorialCalificaciones" class="block p-2 hover:bg-gray-100">Historia Academica</a>
+                    </div>
+                }
+                else
+                {
+                    <a href="#" class="block p-2 hover:bg-gray-100">⚙ Admin panel</a>
+                    <a href="#" class="block p-2 hover:bg-gray-100">👥 Usuarios</a>
+                }
+            }
+
+        </div>
+    </div>
+
+    <header class="bg-primary-500/40 border-2 border-primary-500">
+
+        <div class="flex space-x-4 items-center">
+
+            <div class="flex flex-row w-1/4 items-center">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <button onclick="toggleSidebar()"
+                     class="ml-3 text-gray-800 font-bold text-2xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-125">
+                        ☰
+                    </button>
+                }
+                <div class="w-1/2 flex justify-center">
+                    <img class="w-16 h-16" src="~/imagenes/logotipo.png" />
+                </div>
+
+                <div class="w-1/2 flex items-center justify-end">
+                    <p class="text-4xl font-extrabold text-gray-800 tracking-widest uppercase">
+                        SCE
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="w-2/4 p-2"></div>
+
+            <!-- USER -->
+            <div class="w-1/4 p-2 flex justify-end items-center">
+
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <div class="flex items-center space-x-3">
+
+                        <span class="text-gray-800">
+                            @User.Identity.Name
+                        </span>
+
+                        <a asp-controller="Home" asp-action="Logout"
+                           class="border-2 border-red-900 rounded-xl p-2 bg-red-900/20 text-red-900">
+                            Logout
+                        </a>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="h-[calc(100vh-100px)]">
+        @RenderBody()
+    </main>
+
+    <footer></footer>
+
+    <script src="~/js/menu.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

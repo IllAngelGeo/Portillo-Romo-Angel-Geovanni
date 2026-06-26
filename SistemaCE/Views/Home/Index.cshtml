@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border-2 border-primary-500">
+
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Iniciar sesión
+            </h2>
+        </div>
+
+        <form asp-action="Login" method="post" class="space-y-5">
+
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600">
+                    Correo electrónico
+                </label>
+
+                <div class="relative mt-1">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+ 
+                    </span>
+                    <input type="text" name="usuario"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" placeholder="alejandro@gmail.com" required />
+                </div>
+            </div>
+
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600">
+                    Contraseña
+                </label>
+
+                <div class="relative mt-1">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                    </span>
+                    <input type="password" name="password"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                           placeholder="password" required />
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="rounded text-purple-600 focus:ring-purple-500" />
+                    <span class="text-gray-600">Recordarme</span>
+                </label>
+
+                <a href="#" class="text-primary-500 hover:underline">
+                    ¿Olvidaste tu contraseña?
+                </a>
+            </div>
+
+
+            <button type="submit"
+                    class="w-full bg-primary-700 text-white py-2 rounded-lg hover:bg-primary-500 transition duration-100 font-medium">
+                Iniciar sesión
+            </button>
+
+        </form>
+    </div>
+
+</div>

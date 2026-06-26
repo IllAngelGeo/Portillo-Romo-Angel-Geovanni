@@ -1,0 +1,163 @@
+﻿@model List<SistemaCE.Models.CalificacionAlumno>
+@using SistemaCE.Helpers
+
+@{
+    ViewData["Title"] = "Historial de Evaluaciones";
+    var grupos = ViewBag.Grupos;
+    var grupoSeleccionado = ViewBag.GrupoSeleccionado;
+    var alumno = ViewBag.Alumno;
+}
+
+<div class="p-6 space-y-6">
+
+
+    <div class="text-center">
+        <h1 class="text-3xl font-bold text-gray-800">Historial de Evaluaciones</h1>
+    </div>
+    <div class="bg-white shadow rounded-lg p-6 border">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Datos del Estudiante</h2>
+
+        <div class="flex space-x-4 bg-primary-900/40 rounded p-2 text-center">
+
+            <div class="flex w-1/4 ">
+                <p class="font-bold text-gray-600 font-bold">Nombre:&nbsp;</p>
+                <p class="font-bold text-gray-800"> @alumno?.NombreCompleto</p>
+            </div>
+
+            <div class="flex w-1/4 ">
+                <p class="font-bold text-gray-600 font-bold">Grupo:&nbsp;</p>
+                <p class="font-bold text-gray-800"> @alumno?.Grupo</p>
+            </div>
+
+            <div class="flex w-1/4 ">
+                <p class="font-bold text-gray-600 font-bold">Matrícula:&nbsp;</p>
+                <p class="font-bold text-gray-800"> @alumno?.Matricula</p>
+            </div>
+
+            @{
+                var estatus = alumno?.Estatus;
+                var color = "";
+
+                if (estatus == EstatusEstudiante.Activo)
+                    color = "text-green-700";
+                else if (estatus == EstatusEstudiante.Baja)
+                    color = "text-red-500";
+                else if (estatus == EstatusEstudiante.Egresado)
+                    color = "text-yellow-300";
+            }
+            <div class="flex w-1/4">
+                <p class="font-bold text-gray-600 font-bold">Estatus:&nbsp;</p>
+                <p class="@color font-bold">@estatus</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow border">
+
+        <h2 class="text-lg font-semibold mb-3 text-gray-700">Periodo cursado</h2>
+
+        <div class="flex flex-wrap gap-2">
+
+            @foreach (var g in grupos)
+            {
+                var activo = g.IdGrupo == grupoSeleccionado;
+
+                <a href="@Url.Action("HistorialCalificaciones", new { grupoId = g.IdGrupo })"
+                   class="px-4 py-2 rounded-lg border text-sm font-semibold
+                       @(activo ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200")">
+                    @g.Nombre
+                </a>
+            }
+
+        </div>
+    </div>
+
+ 
+    <div class="bg-white shadow rounded-lg p-6 border">
+
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Calificaciones</h2>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-300 text-center">
+
+
+                <thead class="bg-gray-200 text-gray-700">
+                    <tr>
+                        <th class="p-2 border">Materia</th>
+                        <th class="p-2 border">Docente</th>
+                        <th class="p-2 border">Eval. 1</th>
+                        <th class="p-2 border">Eval. 2</th>
+                        <th class="p-2 border">Eval. 3</th>
+                        <th class="p-2 border">Final</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            var l1 = CalificacionHelper.ObtenerLiteral(item.Parcial1);
+                            var l2 = CalificacionHelper.ObtenerLiteral(item.Parcial2);
+                            var l3 = CalificacionHelper.ObtenerLiteral(item.Parcial3);
+                            var lf = CalificacionHelper.ObtenerLiteral(item.PromedioFinal);
+
+
+                            string GetColor(string lit) => lit switch
+                            {
+                                "NA" => "text-red-600 font-bold",
+                                "SA" => "text-yellow-600 font-bold",
+                                "DE" => "text-blue-600 font-bold",
+                                "AU" => "text-green-600 font-bold",
+                                _ => "text-gray-500"
+                            };
+
+                            <tr class="border-t hover:bg-gray-50">
+
+
+                                <td class="p-2 border">
+                                    @item.IdMateriaNavigation?.Nombre
+                                </td>
+
+                                <td class="p-2 border">
+                                    @item.IdDocenteNavigation?.IdDocenteNavigation?.Nombre
+                                    @item.IdDocenteNavigation?.IdDocenteNavigation?.ApellidoPaterno
+                                </td>
+
+
+                                <td class="p-2 border @GetColor(l1)">
+                                    @l1
+                                </td>
+
+                                <td class="p-2 border @GetColor(l2)">
+                                    @l2
+                                </td>
+
+                                <td class="p-2 border @GetColor(l3)">
+                                    @l3
+                                </td>
+
+                                <td class="p-2 border @GetColor(lf)">
+                                    @lf
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="p-4 text-gray-500">
+                                No hay calificaciones en este periodo.
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
